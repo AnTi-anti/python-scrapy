@@ -4,7 +4,7 @@
 
 资料来源于：https://kaiwu.lagou.com/course/courseInfo.htm?sid=&courseId=46#/detail/pc?id=1663
 
-因作者每周更新一章节，故会不定期整理文章于此处，目前更新至第21讲
+因作者不定期更新章节，故会略有延迟更新于此，目前官网更新至第25讲
 
 欢迎大家支持正版！
 
