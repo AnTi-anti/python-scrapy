@@ -16,7 +16,7 @@
 
 然后手机连接 Wi-Fi，和 PC 处于同一个局域网下，另外将 Charles 代理和 Charles CA 证书设置好，同时需要开启 SSL 监听。
 
-此过程的配置流程可以参见：https://cuiqingcai.com/5255.html。
+此过程的配置流程可以参见：https://cuiqingcai.com/5255.html
 
 最后手机上安装本节提供的 apk（apk 随课件一同领取），进行接下来的 Charles 抓包操作。
 
