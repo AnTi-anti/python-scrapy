@@ -77,10 +77,14 @@ SSL Pining 发生在下面的一些情况：
 对于这两种思路，有以下一些绕过 SSL Pining 的解决方案。
 
 #### 修改 App 的配置
-如果是 App 的开发者或者把 apk 逆向出来了，那么可以直接通过修改 AndroidManifest.xml 文件，在 apk 里面添加证书的信任规则即可，详情可以参考 https://crifan.github.io/app_capture_package_tool_charles/website/how_capture_app/complex_https/https_ssl_pinning/，这种思路属于第一种信任证书的解决方案。
+如果是 App 的开发者或者把 apk 逆向出来了，那么可以直接通过修改 AndroidManifest.xml 文件，在 apk 里面添加证书的信任规则即可，详情可以参考 https://crifan.github.io/app_capture_package_tool_charles/website/how_capture_app/complex_https/https_ssl_pinning/
+
+这种思路属于第一种信任证书的解决方案。
 
 ##### 将证书设置为系统证书
-当然也可以将证书直接设置为系统证书，只需要将抓包软件的证书设置为系统区域即可。但这个前提是手机必须要 ROOT，而且需要计算证书 Hash Code 并对证书进行重命名，具体可以参考 https://crifan.github.io/app_capture_package_tool_charles/website/how_capture_app/complex_https/https_ssl_pinning，这种思路也是第一种信任证书的解决方案。
+当然也可以将证书直接设置为系统证书，只需要将抓包软件的证书设置为系统区域即可。但这个前提是手机必须要 ROOT，而且需要计算证书 Hash Code 并对证书进行重命名，具体可以参考 https://crifan.github.io/app_capture_package_tool_charles/website/how_capture_app/complex_https/https_ssl_pinning，
+
+这种思路也是第一种信任证书的解决方案。
 
 ##### Xposed + JustTrustMe
 Xposed 是一款 Android 端的 Hook 工具，利用它我们可以 Hook App 里面的关键方法的执行逻辑，绕过 HTTPS 的证书校验过程。JustTrustMe 是基于 Xposed 一个插件，它可以将 HTTPS 证书校验的部分进行 Hook，改写其中的证书校验逻辑，这种思路是属于第二种绕过 HTTPS 证书校验的解决方案。
@@ -92,7 +96,9 @@ Xposed 是一款 Android 端的 Hook 工具，利用它我们可以 Hook App 里
 ##### Frida
 Frida 也是一种类似 Xposed 的 Hook 软件，使用它我们也可以实现一些 HTTPS 证书校验逻辑的改写，这种思路也是属于第二种绕过 HTTPS 证书校验的方案。
 
-具体可以参考 https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/。
+具体可以参考 
+
+https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/
 
 ##### VirtualXposed
 Xposed 的使用需要 ROOT，如果不想 ROOT 的话，可以直接使用一款基于 VirtualApp 开发的 VirtualXposed 工具，它提供了一个虚拟环境，内置了 Xposed。我们只需要将想要的软件安装到 VirtualXposed 里面就能使用 Xposed 的功能了，然后配合 JustTrustMe 插件也能解决 SSL Pining 的问题，这种思路是属于第二种绕过 HTTPS 证书校验的解决方案。
