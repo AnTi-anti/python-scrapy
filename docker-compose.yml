@@ -1,0 +1,15 @@
+version: '3'
+services:
+  crawl:
+    image: python-scrapy:latest
+    # build: .
+    volumes:
+      - /root/python-scrapy:/root/python-scrapy
+  chrome-debug:
+    container_name: chrome-debug
+    hostname: chrome-debug
+    image: selenium/standalone-chrome-debug
+    ports:
+      - "9516:4444"
+      - "31527:5900"  #vnc 密码secret
+    mem_limit: 1g
